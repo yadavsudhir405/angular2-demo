@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular2Demo</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+    <div class="chart">
+    </div>
+
+        <svg height="100" width="1000">
+            
+        </svg>
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript">
+        
+        var data = [10, 20, 30, 40];
+        // var div1 = d3.select(".chart");
+        // div1.selectAll("div").data(data).enter().append("div")
+        // .style("width", function(d){
+        //         return d*10 + 'px';
+        // })
+        // .style("background-color","steelblue")
+        // .style("margin", "1px")
+        // .style("text-align", "right")
+        // .text(function(d){
+        //     return d;
+        // })
+
+        var shape = d3.select("svg");
+        var circle = shape.selectAll("circle").data(data);
+        circle.enter().append("circle")
+        .attr("cx", function(d){ 
+            result = d/10;
+            var x = 50;
+            switch(result){
+                case 1: 
+                    return x+d; 
+                case 2:
+                    return 2*10+x+d;
+                case 3:
+                    return 2*10+2*20+x+d;
+                case 4:
+                    return 2*10+2*20+2*30+x+d;
+            }
+            
+        })
+        .attr("cy", "50")
+        .attr("stroke", "black")
+        .attr("r", function(d){ return d}).style("fill",function(d){
+            var color = 'black';
+            result = d/10;
+            switch(result){
+                case 1: 
+                    return "red";
+                case 2:
+                    return "steelblue";
+                case 3:
+                    return "black";
+                case 4:
+                    return "green";
+            }
+            
+        });
+        circle.exit().remove();
+
+    </script>
+</body>
+</html>
