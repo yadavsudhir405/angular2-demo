@@ -8,10 +8,12 @@ import { ProductService } from "./product.service";
 })
 export class ProductListComponent implements OnInit {
   pageTitle = "Product List";
+  errorMessage: string;
   imageWidth = 50;
   imageMargin = 2;
   showImage = false;
   filterText = "cart";
+  filteredProducts: IProduct[];
   products: IProduct[] ;
   constructor(private _product_Service: ProductService) {
   }
@@ -21,6 +23,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this._product_Service.getProducts();
-    this.filterText = 'cart';
+    this.filterText = "cart";
   }
 }
