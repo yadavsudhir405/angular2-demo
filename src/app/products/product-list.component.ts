@@ -25,4 +25,7 @@ export class ProductListComponent implements OnInit {
     this.products = this._product_Service.getProducts();
     this.filterText = "cart";
   }
+  starRatingClicked(message: string): void {
+    this.pageTitle = "Product List :" + message;
+  }
 }

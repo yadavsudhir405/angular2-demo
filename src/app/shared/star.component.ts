@@ -1,4 +1,4 @@
-import {Component, OnChanges, SimpleChanges, OnInit, Input} from "@angular/core";
+import {Component, OnChanges, SimpleChanges, OnInit, Input, EventEmitter, Output} from "@angular/core";
 
 @Component({
     selector: "app-star",
@@ -8,10 +8,14 @@ import {Component, OnChanges, SimpleChanges, OnInit, Input} from "@angular/core"
 export class StarComponent implements OnChanges {
 
     @Input() rating: number;
+    @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
     starWidth: number;
 
     ngOnChanges(): void {
         this.starWidth = this.rating * 85 / 5;
+    }
+    onClick(): void {
+      this.ratingClicked.emit("Star Rating Clicked");
     }
 
     // ngOnInit(): void {
