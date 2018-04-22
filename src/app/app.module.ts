@@ -18,7 +18,6 @@ import { ProductDetailComponentComponent } from './products/product-detail-compo
     ProductListComponent,
     ConvertToSpacePipe,
     StarComponent,
-    ProductDetail.ComponentComponent,
     ProductDetailComponentComponent
   ],
   imports: [
