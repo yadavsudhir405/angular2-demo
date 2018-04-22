@@ -9,6 +9,7 @@ import {ProductListComponent} from "./products/product-list.component";
 import { StarComponent } from "./shared/star.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductDetail } from './products/product-detail.component/product-detail.component.component';
+import { ProductDetailComponentComponent } from './products/product-detail-component.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ProductDetail } from './products/product-detail.component/product-detai
     ProductListComponent,
     ConvertToSpacePipe,
     StarComponent,
-    ProductDetail.ComponentComponent
+    ProductDetail.ComponentComponent,
+    ProductDetailComponentComponent
   ],
   imports: [
     BrowserModule,
