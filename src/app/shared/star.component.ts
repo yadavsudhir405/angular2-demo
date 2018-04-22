@@ -17,8 +17,4 @@ export class StarComponent implements OnChanges {
     onClick(): void {
       this.ratingClicked.emit("Star Rating Clicked");
     }
-
-    // ngOnInit(): void {
-    //     console.log("Star component is initiliazed");
-    // }
 }

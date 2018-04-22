@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 import {ProductListComponent} from "./products/product-list.component";
 import { StarComponent } from "./shared/star.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ProductDetail } from './products/product-detail.component/product-detail.component.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     ProductListComponent,
     ConvertToSpacePipe,
-    StarComponent
+    StarComponent,
+    ProductDetail.ComponentComponent
   ],
   imports: [
     BrowserModule,
