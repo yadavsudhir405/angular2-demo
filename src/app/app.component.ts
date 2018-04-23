@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import { ProductService } from "./products/product.service";
 @Component({
   selector : "app-root",
-  providers: [ ProductService ],
+  providers: [ ],
   template : `
   <div>
     <div>
