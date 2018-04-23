@@ -8,8 +8,7 @@ import { AppComponent } from "./app.component";
 import {ProductListComponent} from "./products/product-list.component";
 import { StarComponent } from "./shared/star.component";
 import { HttpClientModule } from "@angular/common/http";
-import { ProductDetail } from "./products/product-detail.component/product-detail.component";
-import {ProductDetailComponent, ProductDetailComponent} from "./products/product-detail-component";
+import {ProductDetailComponent} from "./products/product-detail-component";
 import {RouterModule} from "@angular/router";
 import {WelcomeComponent} from "./home/welcome.component";
 
