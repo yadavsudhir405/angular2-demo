@@ -17,6 +17,9 @@ import { ProductService } from "./products/product.service";
       </nav>
     </div>
   </div>
+  <div class="container">
+      <router-outlet></router-outlet>
+  </div>
   `
 })
 export class AppComponent {
