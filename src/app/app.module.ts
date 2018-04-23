@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {WelcomeComponent} from "./home/welcome.component";
 import {ProductModule} from "./products/product.module";
+import {ProductGuardService} from "./products/product-guard.service";
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import {ProductModule} from "./products/product.module";
     ]),
     ProductModule
   ],
-  providers: [ ],
+  providers: [ ProductGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
