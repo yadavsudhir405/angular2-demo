@@ -1,7 +1,7 @@
-import { IProduct } from "./product";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {IProduct} from "./product";
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs/Observable";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import "rxjs/add/operator/catch";
 import "rxjs/add/operator/do";
 
@@ -23,6 +23,7 @@ export class ProductService {
             console.log("All :" + JSON.stringify(data));
         })
         .catch(err => this.handleError(err));
+
     }
   private handleError(err: HttpErrorResponse) {
         console.log(err.message);
