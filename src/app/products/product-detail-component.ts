@@ -28,5 +28,8 @@ export class ProductDetailComponent implements OnInit {
   onBack() {
     this._router.navigate(["/products"]);
   }
+  onEdit() {
+    this._router.navigate(["/products", this.product.productId, "edit"]);
+  }
 
 }

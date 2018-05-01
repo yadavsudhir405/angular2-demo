@@ -47,6 +47,9 @@
             <td>
               <app-star [rating]= "product.starRating" (ratingClicked)= "starRatingClicked($event)"> </app-star>
             </td>
+            <td>
+              <a class="btn btn-primary" [routerLink]= "['/products',product.productId,'edit']">Edit</a>
+            </td>
           </tr>
         </tbody>
       </table>
