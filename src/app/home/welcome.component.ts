@@ -1,11 +1,11 @@
 import {Component} from "@angular/core";
-import { TreeModel, TreeNode } from "angular-tree-component";
 
 @Component({
    templateUrl: "./welcome.component.html"
 })
 export class WelcomeComponent {
   public pageTitle = "Welcome";
+  public slis = [];
   public nodes = [
     {
       name: "North America",
@@ -37,34 +37,20 @@ export class WelcomeComponent {
     }
   ];
   public treeOptions = {
-    useCheckbox: true
+    animateExpand: true,
+    scrollOnActivate: true,
   };
-  filterFn(value: string, treeModel: TreeModel) {
-    treeModel.filterNodes((node: TreeNode) => fuzzysearch(value, node.data.name));
+  public onNodeSelection(event: any) {
+    console.log(JSON.stringify(event.node.data));
   }
-}
-function fuzzysearch (needle: string, haystack: string) {
-  const haystackLC = haystack.toLowerCase();
-  const needleLC = needle.toLowerCase();
-
-  const hlen = haystack.length;
-  const nlen = needleLC.length;
-
-  if (nlen > hlen) {
-    return false;
+  public onNodeDeselection(event: any) {
+    console.log("Node Deselectd");
   }
-  if (nlen === hlen) {
-    return needleLC === haystackLC;
+  public addNewSli() {
+    this.slis.push(1);
   }
-  outer: for (let i = 0, j = 0; i < nlen; i++) {
-    const nch = needleLC.charCodeAt(i);
-
-    while (j < hlen) {
-      if (haystackLC.charCodeAt(j++) === nch) {
-        continue outer;
-      }
-    }
-    return false;
+  removeSli(sli: any) {
+    console.log(sli);
+    this.slis.pop(sli);
   }
-  return true;
 }

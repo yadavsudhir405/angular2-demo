@@ -10,7 +10,7 @@ import {ProductGuardService} from "./products/product-guard.service";
 import {UserModule} from "./user/user.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {WelcomeComponent} from "./home/welcome.component";
-import { MatRadioModule} from "@angular/material";
+import {MatCardModule, MatRadioModule} from "@angular/material";
 import {TreeModule} from "angular-tree-component";
 
 
@@ -21,6 +21,7 @@ import {TreeModule} from "angular-tree-component";
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     TreeModule,
     MatRadioModule,
     FormsModule,
@@ -32,4 +33,5 @@ import {TreeModule} from "angular-tree-component";
   providers: [ ProductGuardService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
