@@ -8,8 +8,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {ProductModule} from "./products/product.module";
 import {ProductGuardService} from "./products/product-guard.service";
 import {UserModule} from "./user/user.module";
-import { AppRoutingModule } from "./app-routing.module";
+import {AppRoutingModule} from "./app-routing.module";
 import {WelcomeComponent} from "./home/welcome.component";
+import { MatRadioModule} from "@angular/material";
+import {TreeModule} from "angular-tree-component";
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import {WelcomeComponent} from "./home/welcome.component";
   ],
   imports: [
     BrowserModule,
+    TreeModule,
+    MatRadioModule,
     FormsModule,
     HttpClientModule,
     ProductModule,

@@ -3,19 +3,15 @@
     {{pageTitle}}
   </div>
   <div class="panel-body"  >
-    <div class="row" >
-      <img src="./assets/images/logo.jpg"
-           class="img-responsive center-block"
-           style="max-height:300px;padding-bottom:50px"/>
-    </div>
-    <div class="row"  >
-      <div class="text-center">Developed by:</div>
-      <h3 class="text-center">Sudhir Yadav</h3>
 
-      <div class="text-center">@suhdiris056</div>
-      <div class="text-center">
-        <a href="http://www.bit.ly/DeborahKsBlog">www.facebook.com/sudhiris056</a>
-      </div>
+    <div class="row">
+      <input id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" placeholder="filter nodes"/>
+      <button (click)="tree.treeModel.clearFilter()">Clear Filter</button>
+    </div>
+
+    <div class="row">
+      <tree-root #tree  [focused]="true" [nodes]= "nodes" [options]=" treeOptions" >
+      </tree-root>
     </div>
   </div>
 </div>
