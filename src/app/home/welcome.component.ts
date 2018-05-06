@@ -51,6 +51,6 @@ export class WelcomeComponent {
   }
   removeSli(sli: any) {
     console.log(sli);
-    this.slis.pop(sli);
+    this.slis.pop();
   }
 }

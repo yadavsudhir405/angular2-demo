@@ -12,15 +12,21 @@ import {AppRoutingModule} from "./app-routing.module";
 import {WelcomeComponent} from "./home/welcome.component";
 import {MatCardModule, MatRadioModule} from "@angular/material";
 import {TreeModule} from "angular-tree-component";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { ModalBasicComponent } from './modal-basic/modal-basic.component';
+import { SlisComponent } from './slis/slis.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
+    ModalBasicComponent,
+    SlisComponent,
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     MatCardModule,
     TreeModule,
     MatRadioModule,
