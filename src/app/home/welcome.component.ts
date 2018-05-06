@@ -53,4 +53,7 @@ export class WelcomeComponent {
     console.log(sli);
     this.slis.pop();
   }
+  openSliTab() {
+    window.open("/slis", "_blank");
+  }
 }

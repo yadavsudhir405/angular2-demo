@@ -1,0 +1,50 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Define Sli</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form">
+        <fieldset>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="sliNameId" class="col-sm-2 control-label">
+                Name
+              </label>
+            </div>
+            <div class="col-md-9">
+              <input type="text" id="sliNameId">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-2 control-label">
+              SLI Name
+            </label>
+            <div class="col-md-8">
+              <input type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-2 control-label">
+              SLI Name
+            </label>
+            <div class="col-md-8">
+              <input type="text">
+            </div>
+          </div>
+        </fieldset>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="material-icons" (click)="open(content)">add</button>
+
+<hr>
+
+<pre>{{closeResult}}</pre>
