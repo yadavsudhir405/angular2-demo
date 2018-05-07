@@ -28,8 +28,8 @@
             </div>
           </div>
         </div>
-        <div *ngFor="let sli of slis" class="card col-sm-6 col-md-4 col-lg-3">
-            <button class="btn close cardClose" title="Delete Customer" (click)="removeSli(sli)">&times;</button>
+        <div *ngFor="let sli of slis;let i = index" [@myTrigger]="state" class="card col-sm-6 col-md-4 col-lg-3">
+            <button class="btn close cardClose" title="Delete Customer" (click)="removeSli(i)">&times;</button>
             <div class="cardHeader">Add Card Header</div>
             <div class="cardBody">
               <div class="clearfix">

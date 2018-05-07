@@ -1,10 +1,24 @@
 import {Component} from "@angular/core";
+import {trigger, style, transition, animate, keyframes, query, stagger, state} from "@angular/animations";
 
 @Component({
-   templateUrl: "./welcome.component.html"
+   templateUrl: "./welcome.component.html",
+   animations: [
+     trigger("myTrigger", [
+       state("fadeIn", style({
+         opacity: "1"
+       })),
+       transition("void=>*", [
+         style({
+           opacity: "0", transform: "translateY(20px)"
+         }),
+         animate("500ms")
+     ])
+     ]
 })
 export class WelcomeComponent {
   public pageTitle = "Welcome";
+  state = "large";
   public slis = [];
   public nodes = [
     {
@@ -47,11 +61,13 @@ export class WelcomeComponent {
     console.log("Node Deselectd");
   }
   public addNewSli() {
+    console.log("Add new SLI");
     this.slis.push(1);
+    this.state = "fadeIn";
   }
-  removeSli(sli: any) {
-    console.log(sli);
-    this.slis.pop();
+  removeSli(index: number ) {
+    console.log("Remove sli " );
+    this.slis.splice(index, 1);
   }
   openSliTab() {
     window.open("/slis", "_blank");

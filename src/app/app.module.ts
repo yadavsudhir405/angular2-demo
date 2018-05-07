@@ -15,6 +15,7 @@ import {TreeModule} from "angular-tree-component";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { SlisComponent } from './slis/slis.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SlisComponent } from './slis/slis.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NgbModule.forRoot(),
     MatCardModule,
     TreeModule,
