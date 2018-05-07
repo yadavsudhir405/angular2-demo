@@ -10,10 +10,13 @@ import {trigger, style, transition, animate, keyframes, query, stagger, state} f
        })),
        transition("void=>*", [
          style({
-           opacity: "0", transform: "translateY(20px)"
+           opacity: "0", transform: "translateY(50px)"
          }),
-         animate("500ms")
-     ])
+         animate("500ms 0s ease-in")
+     ]),
+       transition("*=>void", [
+         animate("500ms ease-out", style({ transform: " scaleX(0) translateX(200px)"}))
+       ])
      ]
 })
 export class WelcomeComponent {
