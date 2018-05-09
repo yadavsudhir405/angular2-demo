@@ -16,8 +16,8 @@ import {trigger, style, transition, animate, keyframes, query, stagger, state} f
      ]),
        transition("*=>void", [
          animate("500ms ease-out", style({ transform: " scaleX(0) translateX(200px)"}))
-       ])
-     ]
+       ]),
+     ]),
 })
 export class WelcomeComponent {
   public pageTitle = "Welcome";

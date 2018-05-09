@@ -1,55 +1,78 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3">
-      <div>
-        <input id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" placeholder="filter nodes"/>
-        <button (click)="tree.treeModel.clearFilter()">Clear Filter</button>
-        <tree-root #tree [focused]="true" [nodes]="nodes" [options]="treeOptions"
-                   (activate)="onNodeSelection($event)" (deactivate)="onNodeDeselection($event)">
-        </tree-root>
+<div class="category-container">
+  <div class="itree-container">
+    <input id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" placeholder="filter nodes"/>
+    <button (click)="tree.treeModel.clearFilter()">Clear Filter</button>
+    <tree-root #tree [focused]="true" [nodes]="nodes" [options]="treeOptions"
+               (activate)="onNodeSelection($event)" (deactivate)="onNodeDeselection($event)">
+    </tree-root>
+  </div>
+</div>
+<div class="card-canvas">
+  <div class="icard-container">
+    <div class="icard">
+      <div class="icard-header" style="text-align: center">Add SLI
+        <div class="actions-place">
+        </div>
       </div>
+      <div class="icard-body">
+        <div class="icard-body-container">
+          <button class="material-icons" (click)="addNewSli()">add_circle_outline</button>
+
+        </div>
+      </div>
+      <div class="icard-footer"></div>
     </div>
-    <div class="col-lg-9">
-
-      <div class="cardContainer" style="margin-top: 10px">
-        <div class="card col-sm-6 col-md-4 col-lg-3">
-          <div class="cardHeader">Add New Sli   </div>
-          <div class="cardBody">
-            <div class="clearfix">
-              <div class="pull-left cardBodyLeft">
-              </div>
-              <div class="pull-left cardBodyRight">
-                <div class="cardBodyContent">
-                  <button class="material-icons" (click)="addNewSli()">add_circle_outline</button>
-                </div>
-                <div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div *ngFor="let sli of slis;let i = index" [@myTrigger]="state" class="card col-sm-6 col-md-4 col-lg-3">
-            <button class="btn close cardClose" title="Delete Customer" (click)="removeSli(i)">&times;</button>
-            <div class="cardHeader">Add Card Header</div>
-            <div class="cardBody">
-              <div class="clearfix">
-                <div class="pull-left cardBodyLeft">
-
-                </div>
-                <div class="pull-left cardBodyRight">
-                  <div class="cardBodyContent">
-                    <app-modal-basic ></app-modal-basic>
-                  </div>
-                  <div>
-                    <a class="material-icons" (click)="openSliTab()">link </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="icard" *ngFor="let sli of slis;let i = index" [@myTrigger]="state">
+      <div class="icard-header" style="text-align: center">New SLI
+        <div class="actions-place">
+          <a class="material-icons" (click)="removeSli(i)">clear </a>
         </div>
       </div>
-
+      <div class="icard-body" style="text-align: center">
+        <h3>New SLI</h3>
+      </div>
+      <div class="icard-footer">
+        <button class="material-icons" (click)="openSliTab()" title ="Edit SLI">add_circle_outline</button>
+        <button class="material-icons" (click)="openSliTab()" style="float: right">add_circle_outline</button>
+      </div>
     </div>
   </div>
+</div>
+<!--<div class="col-lg-9">-->
 
+<!--<div class="cardContainer" style="margin-top: 10px">-->
+<!--<div class="card col-sm-6 col-md-4 col-lg-3">-->
+<!--<div class="cardHeader">Add New Sli</div>-->
+<!--<div class="cardBody">-->
+<!--<div class="clearfix">-->
+<!--<div class="pull-left cardBodyRight">-->
+<!--<div class="cardBodyContent">-->
+<!--<button class="material-icons" (click)="addNewSli()">add_circle_outline</button>-->
+<!--</div>-->
+<!--<div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div *ngFor="let sli of slis;let i = index" [@myTrigger]="state" class="card col-sm-6 col-md-4 col-lg-3">-->
+<!--<button class="btn close cardClose" title="Delete Customer" (click)="removeSli(i)">&times;</button>-->
+<!--<div class="cardHeader">Add Card Header</div>-->
+<!--<div class="cardBody">-->
+<!--<div class="clearfix">-->
+<!--<div class="pull-left cardBodyLeft">-->
+
+<!--</div>-->
+<!--<div class="pull-left cardBodyRight">-->
+<!--<div class="cardBodyContent">-->
+<!--<app-modal-basic></app-modal-basic>-->
+<!--</div>-->
+<!--<div>-->
+<!--<a class="material-icons" (click)="openSliTab()">link </a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
